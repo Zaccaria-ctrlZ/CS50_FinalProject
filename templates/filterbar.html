@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<section class="filterbar">
+    <div>
+        <form id="filterForm" method="get" action="/">
+            <label for="genre">Genre:</label>
+            <select id="genre">
+                <option value="">-</option>
+                {% for genre in genres %}
+                    <option value="{{ genre }}">{{ genre }}</option>
+                {% endfor %}
+            </select>
+
+            <label for="year">Year:</label>
+            <select id="year">
+                <option value="">-</option>
+                {% for year in years %}
+                    <option value="{{ year }}">{{ year }}</option>
+                {% endfor %}
+            </select>
+
+            <label for="rating">Rating:</label>
+            <select id="rating">
+                <option value="">-</option>
+                {% for rating in ratings %}
+                    <option value="{{ rating }}">{{ rating }}</option>
+                {% endfor %}
+            </select>
+
+            <button type="button" onclick="filterMovies()">Filter</button>
+        </form>
+    </div>
+</section>
+ {% endblock %}
